@@ -1,0 +1,61 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.CalculatorWrapper {
+  display: grid;
+  grid-template-rows: 1fr repeat(4, 2fr);
+  gap: 5px;
+  width: 300px;
+  max-width: 90%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.button-row-last {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.Button:hover {
+  opacity: 0.8;
+}
+
+.Button:active {
+  opacity: 1;
+}
