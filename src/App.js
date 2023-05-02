@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Calculator from './Calculator';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme, newTheme } from './theme';
+import { lightTheme, darkTheme, coolTheme } from './theme';
+import styled from 'styled-components';
+import { FaCogs } from 'react-icons/fa';
 import './App.css';
+
+const Toggle = styled.button`
+    color: ${({ theme }) => theme.colorDisplay};
+`;
 
 function App() {
     const [theme, setTheme] = useState('light');
-    const currentTheme = theme === 'light' ? lightTheme : theme === 'dark' ? darkTheme : newTheme;
+    const currentTheme = theme === 'light' ? lightTheme : theme === 'dark' ? darkTheme : coolTheme;
 
     const themeNames = ['light', 'dark', 'new'];
 
@@ -39,7 +45,10 @@ function App() {
     return (
         <ThemeProvider theme={currentTheme}>
             <div className="App">
-                <button onClick={toggleTheme}>Toggle theme</button>
+                <Toggle
+                    className='toggle'
+                    onClick={toggleTheme}
+                ><FaCogs />Toggle theme</Toggle>
                 <Calculator />
             </div>
         </ThemeProvider>
